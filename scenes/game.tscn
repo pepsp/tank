@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1upp6gkrgseb"]
 
 [ext_resource type="PackedScene" uid="uid://bip0786jkj4e3" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ikad7uuoc1s2" path="res://scenes/level.tscn" id="2_yqjtg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,10 +25,13 @@ shadow_enabled = true
 environment = SubResource("Environment_yqjtg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1333141614]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 8.217705, 7.9933186)
-keep_aspect = 0
-h_offset = 5.0
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5, 5)
 projection = 1
-size = 40.312
+size = 12.0
+near = 0.001
+far = 35.08
 
 [node name="Player" parent="." unique_id=1460161014 instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.254446)
+
+[node name="Level" parent="." unique_id=1654944058 instance=ExtResource("2_yqjtg")]

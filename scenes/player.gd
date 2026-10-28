@@ -1,9 +1,9 @@
 
 extends CharacterBody3D
 
-@export var vel_giro: float = 13.0
-@export var vel_giro_canon: float = 7.0
-@export var velocidad: float = 9.0
+@export var vel_giro: float = 9.0
+@export var vel_giro_canon: float = 8.5
+@export var velocidad: float = 6.0
 
 @onready var cannon: Node3D = $tank/controller/cannon
 @onready var body2: Node3D = $tank/controller/body2
@@ -39,7 +39,7 @@ func _apuntar_canon(delta: float) -> void:
 
 	# Frente del cañón = -Z
 	var angulo_global := atan2(-hacia_mouse.x, -hacia_mouse.z)
-	cannon.global_rotation.y = lerp_angle(cannon.global_rotation.y, angulo_global, vel_giro * delta)
+	cannon.global_rotation.y = lerp_angle(cannon.global_rotation.y, angulo_global, vel_giro_canon * delta)
 
 func _mover_tanque(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -61,7 +61,7 @@ func _mover_tanque(delta: float) -> void:
 
 		velocity.x = direction.x * velocidad_final
 		velocity.z = direction.z * velocidad_final
-		body2.rotation.y = lerp_angle(rot_actual, angulo_cuerpo, vel_giro_canon * delta)
+		body2.rotation.y = lerp_angle(rot_actual, angulo_cuerpo, vel_giro * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		velocity.z = move_toward(velocity.z, 0, velocidad)

@@ -230,7 +230,6 @@ collision_mask = 6
 script = ExtResource("1_3vyb7")
 
 [node name="tank" type="Node3D" parent="." unique_id=1305541047]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="controller" type="Node3D" parent="tank" unique_id=325974997]
 
@@ -271,5 +270,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3125, -0.1875, 0.125)
 mesh = SubResource("ArrayMesh_j2etl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=947724318]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.52496696, -0.22829795)
 shape = SubResource("BoxShape3D_74fww")
