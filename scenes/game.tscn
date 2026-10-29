@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b1upp6gkrgseb"]
 
+[ext_resource type="Script" uid="uid://nnue8w1otgbg" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bip0786jkj4e3" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ikad7uuoc1s2" path="res://scenes/level.tscn" id="2_yqjtg"]
 
@@ -16,6 +17,7 @@ sky = SubResource("Sky_uwrxv")
 glow_enabled = true
 
 [node name="Game" type="Node3D" unique_id=1276897628]
+script = ExtResource("1_lnu2h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=686140508]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -32,6 +34,6 @@ near = 0.001
 far = 35.08
 
 [node name="Player" parent="." unique_id=1460161014 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.254446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.66, 0, -8.48)
 
 [node name="Level" parent="." unique_id=1654944058 instance=ExtResource("2_yqjtg")]
