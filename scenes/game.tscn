@@ -34,6 +34,6 @@ near = 0.001
 far = 35.08
 
 [node name="Player" parent="." unique_id=1460161014 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.66, 0, -8.48)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035982132, 0, 4.9500265)
 
 [node name="Level" parent="." unique_id=1654944058 instance=ExtResource("2_yqjtg")]
