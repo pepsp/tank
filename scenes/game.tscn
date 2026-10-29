@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://nnue8w1otgbg" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bip0786jkj4e3" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://ikad7uuoc1s2" path="res://scenes/level.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cjm7eoym7og7o" path="res://scenes/cubo.tscn" id="4_lbhrr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cj0n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,3 +38,6 @@ far = 35.08
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035982132, 0, 4.9500265)
 
 [node name="Level" parent="." unique_id=1654944058 instance=ExtResource("2_yqjtg")]
+
+[node name="Cubo" parent="." unique_id=1102361276 instance=ExtResource("4_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5415053, 0)

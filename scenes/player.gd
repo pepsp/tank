@@ -1,6 +1,9 @@
 
 extends CharacterBody3D
 
+@export var escena_cb: PackedScene
+@onready var punto_disparo: Marker3D = $tank/controller/cannon/cube/PuntoDisparo
+
 @export var vel_giro: float = 9.1
 @export var vel_giro_canon: float = 8.5
 @export var velocidad: float = 6.0
@@ -10,6 +13,8 @@ extends CharacterBody3D
 
 func _process(delta: float) -> void:
 	_apuntar_canon(delta)
+	if Input.is_action_just_pressed("shoot"):
+		_disparar()
 
 func _physics_process(delta: float) -> void:
 	_mover_tanque(delta)
@@ -65,3 +70,9 @@ func _mover_tanque(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		velocity.z = move_toward(velocity.z, 0, velocidad)
+
+func _disparar():
+	var bala = escena_cb.instantiate()
+	get_tree().current_scene.add_child(bala)
+	bala.global_transform = punto_disparo.global_transform
+	bala.disparar(-punto_disparo.global_basis.z)

@@ -236,7 +236,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1875, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1875)
 mesh = SubResource("ArrayMesh_k7s7x")
 
-[node name="Marker3D" type="Marker3D" parent="tank/controller/cannon/cube" unique_id=1382247418]
+[node name="PuntoDisparo" type="Marker3D" parent="tank/controller/cannon/cube" unique_id=1382247418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09362924, -0.3586046)
 
 [node name="cube2" type="MeshInstance3D" parent="tank/controller/cannon" unique_id=179213506]
