@@ -1,7 +1,7 @@
 
 extends CharacterBody3D
 
-@export var vel_giro: float = 9.0
+@export var vel_giro: float = 9.1
 @export var vel_giro_canon: float = 8.5
 @export var velocidad: float = 6.0
 
