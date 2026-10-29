@@ -8,3 +8,5 @@ size = Vector2(24, 24)
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1492130034]
 layers = 4
 mesh = SubResource("PlaneMesh_27a0t")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1756158554]
