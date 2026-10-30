@@ -78,14 +78,14 @@ func _mover_tanque(delta: float) -> void:
 func _disparar():
 	if active_cbs >= max_cbs:
 		return
-	var bala = escena_cb.instantiate()
-	get_tree().current_scene.add_child(bala)
-	bala.global_transform = punto_disparo.global_transform
-	bala.disparar(-punto_disparo.global_basis.z)
+	var cb = escena_cb.instantiate()
+	get_tree().current_scene.add_child(cb)
+	cb.global_transform = punto_disparo.global_transform
+	cb.disparar(-punto_disparo.global_basis.z)
 	active_cbs += 1
-	bala.tree_exiting.connect(_on_bala_destruida)
+	cb.tree_exiting.connect(_on_cb_destroyed)
 	
-func _on_bala_destruida() -> void:
+func _on_cb_destroyed() -> void:
 	active_cbs -= 1
 	
 	
