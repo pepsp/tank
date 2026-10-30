@@ -221,11 +221,12 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_doxhs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbf0h"]
-size = Vector3(0.5039978, 0.30652237, 0.47738457)
+size = Vector3(0.58548546, 0.29193306, 0.57897127)
 
 [node name="Tank" type="CharacterBody3D" unique_id=226076162]
 
 [node name="tank" type="Node3D" parent="." unique_id=826714138]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="controller" type="Node3D" parent="tank" unique_id=1169398674]
 
@@ -269,5 +270,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3125, -0.1875, 0.125)
 mesh = SubResource("ArrayMesh_j2etl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=325537815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5258789e-05, 0.21655667, -0.06133747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012960434, 0.22385132, -0.08414346)
 shape = SubResource("BoxShape3D_vbf0h")
