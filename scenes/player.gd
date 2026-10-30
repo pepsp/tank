@@ -3,6 +3,10 @@ extends CharacterBody3D
 
 @export var escena_cb: PackedScene
 @onready var punto_disparo: Marker3D = $tank/controller/cannon/cube/PuntoDisparo
+@export var max_cbs = 5
+var active_cbs := 0
+
+
 
 @export var vel_giro: float = 9.1
 @export var vel_giro_canon: float = 8.5
@@ -72,7 +76,17 @@ func _mover_tanque(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, velocidad)
 
 func _disparar():
+	if active_cbs >= max_cbs:
+		return
 	var bala = escena_cb.instantiate()
 	get_tree().current_scene.add_child(bala)
 	bala.global_transform = punto_disparo.global_transform
 	bala.disparar(-punto_disparo.global_basis.z)
+	active_cbs += 1
+	bala.tree_exiting.connect(_on_bala_destruida)
+	
+func _on_bala_destruida() -> void:
+	active_cbs -= 1
+	
+	
+	
