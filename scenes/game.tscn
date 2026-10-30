@@ -43,4 +43,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035982132, 0, 4.9500265)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5415053, 0)
 
 [node name="Cubo2" parent="." unique_id=1919415298 instance=ExtResource("4_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8712502, 0.5415053, 1.9156506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.538333, 0.5415053, 0.21806407)
