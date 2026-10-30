@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 @export var escena_cb: PackedScene
 @onready var punto_disparo: Marker3D = $tank/controller/cannon/cube/PuntoDisparo
+@onready var shots_timer = $ShotsTimer
+@onready var movement_timer = $MovementTimer
 @export var max_cbs = 5
 var active_cbs := 0
 
@@ -10,19 +12,21 @@ var active_cbs := 0
 
 @export var vel_giro: float = 9.1
 @export var vel_giro_canon: float = 8.5
-@export var velocidad: float = 6.0
+@export var velocidad: float = 4.5
 
 @onready var cannon: Node3D = $tank/controller/cannon
 @onready var body2: Node3D = $tank/controller/body2
 
 func _process(delta: float) -> void:
 	_apuntar_canon(delta)
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and shots_timer.is_stopped():
 		_disparar()
+		shots_timer.start()
 
 func _physics_process(delta: float) -> void:
-	_mover_tanque(delta)
-	move_and_slide()
+	if movement_timer.is_stopped():
+		_mover_tanque(delta)
+		move_and_slide()
 
 func _apuntar_canon(delta: float) -> void:
 	var camara := get_viewport().get_camera_3d()
@@ -84,6 +88,7 @@ func _disparar():
 	cb.disparar(-punto_disparo.global_basis.z)
 	active_cbs += 1
 	cb.tree_exiting.connect(_on_cb_destroyed)
+	movement_timer.start()
 	
 func _on_cb_destroyed() -> void:
 	active_cbs -= 1

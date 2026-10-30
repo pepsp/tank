@@ -8,3 +8,12 @@
 collision_mask = 6
 script = ExtResource("2_g2els")
 escena_cb = ExtResource("3_qhqgy")
+
+[node name="ShotsTimer" type="Timer" parent="." index="2" unique_id=305037666]
+wait_time = 0.15
+one_shot = true
+autostart = true
+
+[node name="MovementTimer" type="Timer" parent="." index="3" unique_id=1457423892]
+wait_time = 0.05
+one_shot = true

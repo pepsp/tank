@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var velocidad: float = 7.2
+@export var velocidad: float = 6.2
 @export var rebotes := 0
 @export var max_rebotes := 1
 const TERRENO := 3
