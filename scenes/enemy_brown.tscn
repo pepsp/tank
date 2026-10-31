@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://x4pj8d4okbai"]
+
+[ext_resource type="PackedScene" uid="uid://dn2qd8twvwk7x" path="res://scenes/tank.tscn" id="1_wasol"]
+[ext_resource type="Script" uid="uid://bslngicpfyw5g" path="res://scenes/enemy_brown.gd" id="2_v6k4a"]
+[ext_resource type="PackedScene" uid="uid://07jb7htad2y3" path="res://scenes/cannon_ball.tscn" id="3_vgl8y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v6k4a"]
+radius = 30.0
+
+[node name="Enemy_Brown" unique_id=226076162 groups=["enemies"] instance=ExtResource("1_wasol")]
+collision_layer = 2
+script = ExtResource("2_v6k4a")
+escena_cb = ExtResource("3_vgl8y")
+
+[node name="PlayerDetection" type="Area3D" parent="." index="2" unique_id=637102838]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection" index="0" unique_id=1710531386]
+shape = SubResource("SphereShape3D_v6k4a")
