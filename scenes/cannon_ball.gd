@@ -3,7 +3,6 @@ extends RigidBody3D
 @export var velocidad: float = 5.2
 @export var rebotes := 0
 @export var max_rebotes := 1
-@onready var safety_timer = $SafetyTimer
 const TERRENO := 3
 
 
@@ -14,6 +13,13 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var v := state.linear_velocity
 	if v.length() > 0.001:
 		state.linear_velocity = v.normalized() * velocidad
+		var direccion := v.normalized()
+		var objetivo := state.transform.origin + direccion
+
+		state.transform = state.transform.looking_at(
+			objetivo,
+			Vector3.UP
+		)
 
 
 func _on_body_entered(body: Node) -> void:
