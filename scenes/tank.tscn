@@ -221,12 +221,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_doxhs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbf0h"]
-size = Vector3(0.58548546, 0.29193306, 0.57897127)
+size = Vector3(0.58548546, 0.22409153, 0.6992135)
 
 [node name="Tank" type="CharacterBody3D" unique_id=226076162]
+collision_layer = 0
+collision_mask = 0
 
 [node name="tank" type="Node3D" parent="." unique_id=826714138]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="controller" type="Node3D" parent="tank" unique_id=1169398674]
 
@@ -240,8 +243,8 @@ mesh = SubResource("ArrayMesh_k7s7x")
 [node name="PuntoDisparo" type="Marker3D" parent="tank/controller/cannon/cube" unique_id=1382247418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09362924, -0.3586046)
 
-[node name="cube2" type="MeshInstance3D" parent="tank/controller/cannon" unique_id=179213506]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1875)
+[node name="cube2" type="MeshInstance3D" parent="tank/controller/cannon/cube" unique_id=179213506]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 mesh = SubResource("ArrayMesh_myp3q")
 
 [node name="top" type="Node3D" parent="tank/controller/cannon" unique_id=1497968387]
@@ -269,6 +272,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3125, -0.1875, 0.125)
 [node name="wheel_right" type="MeshInstance3D" parent="tank/controller/body2/wheel_right2" unique_id=1794499603]
 mesh = SubResource("ArrayMesh_j2etl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=325537815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012960434, 0.22385132, -0.08414346)
+[node name="CollisionShape3D_CB" type="CollisionShape3D" parent="." unique_id=325537815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25792077, -0.069456525)
 shape = SubResource("BoxShape3D_vbf0h")
+metadata/_edit_lock_ = true

@@ -5,9 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://07jb7htad2y3" path="res://scenes/cannon_ball.tscn" id="3_qhqgy"]
 
 [node name="Player" unique_id=226076162 groups=["players"] instance=ExtResource("1_3vyb7")]
-collision_mask = 6
+collision_layer = 1
+collision_mask = 14
 script = ExtResource("2_g2els")
 escena_cb = ExtResource("3_qhqgy")
+
+[node name="RayCast3D" type="RayCast3D" parent="tank/controller/cannon/cube" parent_id_path=PackedInt32Array(1578024388) index="2" unique_id=42933106]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0.09272735, 0.4303313)
+target_position = Vector3(0, 0, -0.85)
+collision_mask = 4
+hit_from_inside = true
 
 [node name="ShotsTimer" type="Timer" parent="." index="2" unique_id=305037666]
 wait_time = 0.15

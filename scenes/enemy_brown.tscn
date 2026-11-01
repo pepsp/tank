@@ -9,6 +9,7 @@ radius = 30.0
 
 [node name="Enemy_Brown" unique_id=226076162 groups=["enemies"] instance=ExtResource("1_wasol")]
 collision_layer = 2
+collision_mask = 15
 script = ExtResource("2_v6k4a")
 escena_cb = ExtResource("3_vgl8y")
 

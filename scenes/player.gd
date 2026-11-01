@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var punto_disparo: Marker3D = $tank/controller/cannon/cube/PuntoDisparo
 @onready var shots_timer = $ShotsTimer
 @onready var movement_timer = $MovementTimer
+@onready var raycast_colision = $tank/controller/cannon/cube/RayCast3D
 @export var max_cbs = 5
 var active_cbs := 0
 
@@ -16,6 +17,8 @@ var active_cbs := 0
 
 @onready var cannon: Node3D = $tank/controller/cannon
 @onready var body2: Node3D = $tank/controller/body2
+@onready var collision: CollisionShape3D = $CollisionShape3D_CB
+
 
 func _process(delta: float) -> void:
 	_apuntar_canon(delta)
@@ -75,6 +78,7 @@ func _mover_tanque(delta: float) -> void:
 		velocity.x = direction.x * velocidad_final
 		velocity.z = direction.z * velocidad_final
 		body2.rotation.y = lerp_angle(rot_actual, angulo_cuerpo, vel_giro * delta)
+		collision.global_rotation.y = body2.global_rotation.y
 	else:
 		velocity.x = move_toward(velocity.x, 0, velocidad)
 		velocity.z = move_toward(velocity.z, 0, velocidad)
@@ -82,6 +86,10 @@ func _mover_tanque(delta: float) -> void:
 func _disparar():
 	if active_cbs >= max_cbs:
 		return
+	raycast_colision.force_raycast_update()
+	if raycast_colision.is_colliding():
+		return
+		
 	var cb = escena_cb.instantiate()
 	get_tree().current_scene.add_child(cb)
 	cb.global_transform = punto_disparo.global_transform
